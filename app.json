@@ -4,11 +4,11 @@
     "slug": "5Tenedores",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/epa_logo_main.png",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "image": "./assets/epa_splassh.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#0F4E66"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -21,7 +21,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/epa_logo_main.png",
         "backgroundColor": "#FFFFFF"
       }
     },
