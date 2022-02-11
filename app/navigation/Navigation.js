@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import {NavigationContainer} from "@react-navigation/native";
 import {createBottomTabNavigator}  from "@react-navigation/bottom-tabs"
+import {Icon} from "react-native-elements";
 
 //Stack de navegacion
 import RestaurantsStack from './RestaurantsStack';
@@ -19,9 +20,18 @@ import TopRestaurantsStack from './TopRestaurantsStack';
 export default function Navigation () {
     return (
       <NavigationContainer>
-          <Tab.Navigator>
+          <Tab.Navigator
+            initialRouteName="restaurants"
+        tabBarOptions={{
+          inactiveTintColor: "#0F4E66",
+          activeTintColor: "#61F4AD",
+        }}
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ color }) => screenOptions(route, color),
+        })}
+          >
               <Tab.Screen 
-              name="favorites" 
+              name="favorites-stack" 
               component={FavoritesStack} 
               options={{title: "Favoritos", headerShown: false}} />
               <Tab.Screen 
@@ -46,5 +56,26 @@ export default function Navigation () {
 };
 
 
-//make this component available to the app
+function screenOptions(route, color) {
+    let iconName;
+
+    switch (route.name) {
+        case "favorites-stack":
+            iconName = "heart";
+            break;
+        case "restaurants-stacks":
+            iconName = "home";
+        default:
+            break;
+    }
+
+    return(
+        <Icon
+            type="material-community"
+            name={iconName}
+            size={22}
+            color={color}
+        />
+    )
+} 
 
