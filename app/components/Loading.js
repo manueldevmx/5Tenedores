@@ -11,7 +11,7 @@ const Loading = (props) => {
 
     return (
        <Overlay
-        isVisible={false}
+        isVisible={isVisible}
         windowBackgroundColor="rgba(0,0,0,0.5)"
         overlyaBackgroundColor="transparent"
         overlayStyle={styles.overlay}
@@ -31,8 +31,9 @@ const styles = StyleSheet.create({
     overlay: {
         height:100,
         width: 200,
-        backgroundColor: "#61F4AD",
+        backgroundColor: "#0F4E66",
         borderRadius: 10,
+        color: "#fff"
     },
     view: {
         flex: 1,
@@ -40,7 +41,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     text: {
-        color:"#0F4E66" ,
+        color:"#61F4AD" , 
         marginTop: 9,
     }
 });

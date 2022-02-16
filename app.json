@@ -6,9 +6,9 @@
     "orientation": "portrait",
     "icon": "./assets/epa_logo_main.png",
     "splash": {
-      "image": "./assets/epa_splassh.png",
+      "image": "./assets/epa_splash.png",
       "resizeMode": "cover",
-      "backgroundColor": "#0F4E66"
+      "backgroundColor": "#52DFFF"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

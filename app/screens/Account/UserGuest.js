@@ -1,27 +1,66 @@
 {/*Screen para usuarios no logueados INVITADOS  */}
 
-//import liraries
-import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React from "react";
+import { StyleSheet, View, ScrollView, Text, Image } from "react-native";
+import { Button } from "react-native-elements";
+import { useNavigation } from "@react-navigation/native";
 
-// create a component
-const UserGuest = () => {
-    return (
-        <View style={styles.container}>
-            <Text>UserGuuuest</Text>
-        </View>
-    );
-};
+export default function UserGuest() {
+  const navigation = useNavigation();
 
-// define your styles
+  return (
+    <ScrollView centerContent={true} style={styles.viewBody}>
+      <Image
+        source={require("../../../assets/Guest.png")}
+        resizeMode="cover"
+        style={styles.image}
+      />
+      <Text style={styles.title}>Crea tu perfil</Text>
+      <Text style={styles.description}>
+        ¿Como describirías tu mejor lugar en Coatzacoalcos? Busca y visualiza los mejores
+        sitios de una forma sencilla y vota cual te ha gustado más.
+      </Text>
+      <View style={styles.viewBtn}>
+        <Button
+          title="Ver tu perfil"
+          buttonStyle={styles.btnStyle}
+          containerStyle={styles.btnContainer}
+          onPress={() => navigation.navigate("login")}
+        />
+      </View>
+    </ScrollView>
+  );
+}
+
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#3999BE',
-    },
+  viewBody: {
+    marginLeft: 30,
+    marginRight: 30,
+  },
+  image: {
+    height: 300,
+    width: "100%",
+    marginBottom: 40,
+    marginHorizontal: 0,
+  },
+  title: {
+    fontWeight: "bold",
+    fontSize: 19,
+    marginBottom: 10,
+    textAlign: "center",
+  },
+  description: {
+    textAlign: "center",
+    marginBottom: 20,
+  },
+  viewBtn: {
+    flex: 1,
+    alignItems: "center",
+  },
+  btnStyle: {
+    backgroundColor: "#FFC753",
+  },
+  btnContainer: {
+    width: "70%",
+  },
 });
-
-//make this component available to the app
-export default UserGuest;

@@ -19,15 +19,20 @@ export default function Navigation() {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        initialRouteName="restaurants"
+        initialRouteName="account"
         tabBarOptions={{
-          inactiveTintColor: "#0F4E66",
-          activeTintColor: "#61F4AD",
+          inactiveTintColor: "#5CB1CF",
+          activeTintColor: "#52DFFF",
         }}
         screenOptions={({ route }) => ({
           tabBarIcon: ({ color }) => screenOptions(route, color),
         })}
       >
+              <Tab.Screen
+          name="account-stack"
+          component={AccountStack}
+          options={{ title: "Cuenta", headerShown: false }}
+        />
         <Tab.Screen
           name="favorites-stack"
           component={FavoritesStack}
@@ -36,13 +41,9 @@ export default function Navigation() {
         <Tab.Screen
           name="restaurants-stack"
           component={RestaurantsStack}
-          options={{ title: "Restaurantes", headerShown: false }}
+          options={{ title: "Lugares", headerShown: false }}
         />
-        <Tab.Screen
-          name="account-stack"
-          component={AccountStack}
-          options={{ title: "Cuenta", headerShown: false }}
-        />
+
         <Tab.Screen
           name="search-stack"
           component={SearchStack}
@@ -66,7 +67,7 @@ function screenOptions(route, color) {
       iconName = "heart";
       break;
     case "restaurants-stack":
-        iconName = "silverware";
+        iconName = "map";
         break;
     case "account-stack":
         iconName = "home";
@@ -82,7 +83,7 @@ function screenOptions(route, color) {
   }
 
   return (
-    <Icon type="material-community" name={iconName} size={22} color={color} />
+    <Icon type="font-awesome" name={iconName} size={22} color={color} />
   );
 }
 
