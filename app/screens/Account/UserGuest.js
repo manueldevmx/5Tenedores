@@ -10,11 +10,7 @@ export default function UserGuest() {
 
   return (
     <ScrollView centerContent={true} style={styles.viewBody}>
-      <Image
-        source={require("../../../assets/Guest.png")}
-        resizeMode="cover"
-        style={styles.image}
-      />
+
       <Text style={styles.title}>Crea tu perfil</Text>
       <Text style={styles.description}>
         ¿Como describirías tu mejor lugar en Coatzacoalcos? Busca y visualiza los mejores
