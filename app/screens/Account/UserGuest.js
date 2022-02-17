@@ -10,7 +10,11 @@ export default function UserGuest() {
 
   return (
     <ScrollView centerContent={true} style={styles.viewBody}>
-
+      <Image
+        source={require("../../../assets/Guest.png")}
+        resizeMode="contain"
+        style={styles.image}
+      />
       <Text style={styles.title}>Crea tu perfil</Text>
       <Text style={styles.description}>
         ¿Como describirías tu mejor lugar en Coatzacoalcos? Busca y visualiza los mejores
@@ -30,8 +34,10 @@ export default function UserGuest() {
 
 const styles = StyleSheet.create({
   viewBody: {
-    marginLeft: 30,
-    marginRight: 30,
+    flex: 1,
+   paddingHorizontal:30,
+    backgroundColor: '#DCF9FD',
+   
   },
   image: {
     height: 300,
